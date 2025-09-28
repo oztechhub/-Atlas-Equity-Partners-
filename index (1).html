@@ -3,22 +3,665 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StayFinder - Find Your Perfect Apartment Rental</title>
-    <meta name="description" content="Discover amazing apartments and homes for short stays, business trips, or extended visits. Book your perfect accommodation with StayFinder." />
-    <meta name="author" content="StayFinder" />
+    <title>Atlas Equity Partners — Wealth Management & Investment Advisory</title>
+    <meta name="description" content="Atlas Equity Partners provides bespoke wealth management and strategic investment advisory services for private clients and family offices." />
+    <meta name="author" content="Atlas Equity Partners" />
 
-    <meta property="og:title" content="StayFinder - Find Your Perfect Apartment Rental" />
-    <meta property="og:description" content="Discover amazing apartments and homes for short stays, business trips, or extended visits. Book your perfect accommodation with StayFinder." />
+    <meta property="og:title" content="Atlas Equity Partners — Wealth Management & Investment Advisory" />
+    <meta property="og:description" content="Atlas Equity Partners provides bespoke wealth management and strategic investment advisory services for private clients and family offices." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@stayfinder" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <style>
+      /* Reset and Base Styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      html {
+          scroll-behavior: smooth;
+      }
+
+      body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+          line-height: 1.6;
+          color: #1b263b;
+          background-color: #f8f8f8;
+      }
+
+      /* Color Variables */
+      :root {
+          --navy: #0d1b2a;
+          --slate: #1b263b;
+          --gold: #c9a24a;
+          --light-gray: #f8f8f8;
+          --white: #ffffff;
+          --shadow: rgba(13, 27, 42, 0.1);
+      }
+
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: var(--navy);
+      }
+
+      h1 {
+          font-size: 3.5rem;
+          font-weight: 700;
+      }
+
+      h2 {
+          font-size: 2.5rem;
+      }
+
+      h3 {
+          font-size: 1.5rem;
+      }
+
+      p {
+          margin-bottom: 1rem;
+          color: var(--slate);
+      }
+
+      /* Container */
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+      }
+
+      /* Navigation */
+      .navbar {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background: var(--white);
+          box-shadow: 0 2px 10px var(--shadow);
+          z-index: 1000;
+          transition: all 0.3s ease;
+      }
+
+      .nav-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 80px;
+      }
+
+      .nav-logo span {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--navy);
+      }
+
+      .nav-menu {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+      }
+
+      .nav-link {
+          text-decoration: none;
+          color: var(--slate);
+          font-weight: 500;
+          transition: color 0.3s ease;
+          position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+          color: var(--gold);
+          outline: none;
+      }
+
+      .nav-link:focus {
+          text-decoration: underline;
+      }
+
+      .nav-toggle {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 4px;
+      }
+
+      .nav-toggle span {
+          width: 25px;
+          height: 3px;
+          background: var(--navy);
+          transition: 0.3s;
+      }
+
+      /* Buttons */
+      .btn-primary,
+      .btn-consultation {
+          background: var(--gold);
+          color: var(--white);
+          padding: 0.75rem 2rem;
+          border: none;
+          border-radius: 4px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-block;
+          text-align: center;
+      }
+
+      .btn-primary:hover,
+      .btn-consultation:hover,
+      .btn-primary:focus,
+      .btn-consultation:focus {
+          background: #b8922a;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(201, 162, 74, 0.3);
+          outline: none;
+      }
+
+      .btn-consultation {
+          padding: 0.6rem 1.5rem;
+          font-size: 0.9rem;
+      }
+
+      /* Hero Section */
+      .hero {
+          height: 100vh;
+          background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="40" r="0.8" fill="%23c9a24a" opacity="0.1"/><circle cx="40" cy="80" r="1.2" fill="%23ffffff" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          color: var(--white);
+      }
+
+      .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(13, 27, 42, 0.2);
+      }
+
+      .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+          padding: 2rem;
+      }
+
+      .hero-title {
+          font-size: 4rem;
+          margin-bottom: 1.5rem;
+          color: var(--white);
+          letter-spacing: -0.02em;
+      }
+
+      .hero-subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 2.5rem;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.7;
+      }
+
+      /* Sections */
+      section {
+          padding: 6rem 0;
+      }
+
+      .section-title {
+          text-align: center;
+          margin-bottom: 3rem;
+          position: relative;
+      }
+
+      .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+          height: 3px;
+          background: var(--gold);
+      }
+
+      /* About Section */
+      .about {
+          background: var(--white);
+      }
+
+      .about-text {
+          max-width: 800px;
+          margin: 0 auto;
+          font-size: 1.1rem;
+          line-height: 1.8;
+          text-align: center;
+      }
+
+      /* Services Section */
+      .services {
+          background: var(--light-gray);
+      }
+
+      .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+      }
+
+      .service-card {
+          background: var(--white);
+          padding: 2.5rem 2rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 20px var(--shadow);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          text-align: center;
+      }
+
+      .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 30px rgba(13, 27, 42, 0.15);
+      }
+
+      .service-title {
+          color: var(--navy);
+          margin-bottom: 1rem;
+          font-size: 1.3rem;
+      }
+
+      .service-description {
+          line-height: 1.7;
+      }
+
+      /* Contact Section */
+      .contact {
+          background: var(--white);
+      }
+
+      .contact-form {
+          max-width: 600px;
+          margin: 0 auto;
+      }
+
+      .form-group {
+          margin-bottom: 1.5rem;
+      }
+
+      .checkbox-group {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+      }
+
+      .checkbox-group input[type="checkbox"] {
+          margin-top: 0.2rem;
+      }
+
+      label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+          color: var(--navy);
+      }
+
+      .checkbox-group label {
+          display: inline;
+          margin-bottom: 0;
+      }
+
+      input,
+      textarea {
+          width: 100%;
+          padding: 0.75rem;
+          border: 2px solid #e1e5e9;
+          border-radius: 4px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      textarea:focus {
+          outline: none;
+          border-color: var(--gold);
+          box-shadow: 0 0 0 3px rgba(201, 162, 74, 0.1);
+      }
+
+      .error-message {
+          color: #d32f2f;
+          font-size: 0.875rem;
+          margin-top: 0.25rem;
+          display: block;
+      }
+
+      /* Footer */
+      .footer {
+          background: var(--navy);
+          color: var(--white);
+          text-align: center;
+          padding: 2rem 0;
+      }
+
+      .footer-legal {
+          font-size: 0.875rem;
+          opacity: 0.8;
+          margin: 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1023px) and (min-width: 768px) {
+          .container {
+              padding: 0 1.5rem;
+          }
+          
+          .hero-title {
+              font-size: 3.5rem;
+          }
+          
+          .services-grid {
+              grid-template-columns: repeat(2, 1fr);
+          }
+          
+          .nav-container {
+              padding: 0 1.5rem;
+          }
+      }
+
+      @media (max-width: 767px) {
+          .container {
+              padding: 0 1rem;
+          }
+          
+          .nav-container {
+              padding: 0 1rem;
+          }
+          
+          .nav-menu {
+              position: fixed;
+              top: 80px;
+              left: 0;
+              width: 100%;
+              height: calc(100vh - 80px);
+              background: var(--white);
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              padding-top: 3rem;
+              transform: translateX(-100%);
+              transition: transform 0.3s ease;
+              box-shadow: 0 2px 10px var(--shadow);
+          }
+          
+          .nav-menu.active {
+              transform: translateX(0);
+          }
+          
+          .nav-toggle {
+              display: flex;
+          }
+          
+          .nav-toggle.active span:nth-child(1) {
+              transform: rotate(-45deg) translate(-5px, 6px);
+          }
+          
+          .nav-toggle.active span:nth-child(2) {
+              opacity: 0;
+          }
+          
+          .nav-toggle.active span:nth-child(3) {
+              transform: rotate(45deg) translate(-5px, -6px);
+          }
+          
+          .hero-title {
+              font-size: 2.5rem;
+          }
+          
+          .hero-subtitle {
+              font-size: 1.1rem;
+          }
+          
+          h2 {
+              font-size: 2rem;
+          }
+          
+          section {
+              padding: 4rem 0;
+          }
+          
+          .services-grid {
+              grid-template-columns: 1fr;
+          }
+          
+          .service-card {
+              padding: 2rem 1.5rem;
+          }
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span>Atlas Equity Partners</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#contact" class="btn-consultation">Free Consultation</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Atlas Equity Partners</h1>
+        <p class="hero-subtitle">Bespoke wealth management and strategic investment advisory services for private clients and family offices</p>
+        <a href="#contact" class="btn-primary">Schedule Consultation</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-text">
+          <p>Atlas Equity Partners is a premier wealth management firm dedicated to providing sophisticated financial solutions for high-net-worth individuals, families, and institutions. With decades of combined experience, our team of seasoned professionals delivers personalized strategies that preserve and grow wealth across generations.</p>
+          <p>We understand that each client's financial situation is unique, which is why we take a holistic approach to wealth management, considering all aspects of your financial life to create comprehensive, tailored solutions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3 class="service-title">Portfolio Management</h3>
+            <p class="service-description">Customized investment strategies designed to optimize returns while managing risk according to your specific objectives and risk tolerance.</p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title">Wealth Planning</h3>
+            <p class="service-description">Comprehensive financial planning services including estate planning, tax optimization, and retirement planning to secure your financial future.</p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title">Family Office Services</h3>
+            <p class="service-description">Dedicated support for ultra-high-net-worth families, including investment management, financial reporting, and coordination with other advisors.</p>
+          </div>
+          <div class="service-card">
+            <h3 class="service-title">Alternative Investments</h3>
+            <p class="service-description">Access to exclusive investment opportunities including private equity, hedge funds, and real estate to diversify and enhance your portfolio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error-message" id="nameError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-message" id="emailError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+            <span class="error-message" id="phoneError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company/Organization</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="assets">Investable Assets</label>
+            <select id="assets" name="assets">
+              <option value="">Please select</option>
+              <option value="1-5M">$1M - $5M</option>
+              <option value="5-25M">$5M - $25M</option>
+              <option value="25-100M">$25M - $100M</option>
+              <option value="100M+">$100M+</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Please describe your investment objectives and how we can assist you..." required></textarea>
+            <span class="error-message" id="messageError"></span>
+          </div>
+          
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">I consent to Atlas Equity Partners contacting me about their services. *</label>
+            </div>
+            <span class="error-message" id="consentError"></span>
+          </div>
+          
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-legal">© 2025 Atlas Equity Partners. All rights reserved. | Investment advisory services provided by Atlas Equity Partners, LLC.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+        });
+      });
+
+      // Form validation and submission
+      const contactForm = document.getElementById('contactForm');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Clear previous errors
+        document.querySelectorAll('.error-message').forEach(error => {
+          error.textContent = '';
+        });
+        
+        let isValid = true;
+        
+        // Validate required fields
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const consent = document.getElementById('consent').checked;
+        
+        if (!name) {
+          document.getElementById('nameError').textContent = 'Name is required';
+          isValid = false;
+        }
+        
+        if (!email) {
+          document.getElementById('emailError').textContent = 'Email is required';
+          isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          document.getElementById('emailError').textContent = 'Please enter a valid email address';
+          isValid = false;
+        }
+        
+        if (!message) {
+          document.getElementById('messageError').textContent = 'Message is required';
+          isValid = false;
+        }
+        
+        if (!consent) {
+          document.getElementById('consentError').textContent = 'Consent is required';
+          isValid = false;
+        }
+        
+        if (isValid) {
+          // Simulate form submission
+          alert('Thank you for your inquiry. We will contact you within 24 hours.');
+          contactForm.reset();
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
